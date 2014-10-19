@@ -49,6 +49,14 @@ get '/users/:user_id' do
 	end
 end
 
+##### User Survey #####
+
+get '/users/:user_id/surveys/new' do
+	@user = User.find(session[:user_id])
+
+	erb :survey_create
+end
+
 ##### Edit User #####
 
 get '/users/:user_id/edit' do
