@@ -8,7 +8,8 @@ class SurveyParser
 			value = pair.split("=")[1]
 			case key
 			when 'title'
-				@current_survey = CreatedSurvey.create!(title: value)
+
+				@current_survey = CreatedSurvey.create!(title: value, user_id: session[:user_id])
 			when 'question'
 				@current_question = Question.create!(content: value, created_survey_id: @current_survey.id)
 			when 'choice'
