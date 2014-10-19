@@ -16,7 +16,8 @@ post '/users' do
 	@user = User.create!(params[:user])
 	@user.password=(params[:password])
 	session[:user_id] = @user.id
-
+	@user.save
+	
   redirect '/users'
 end
 
