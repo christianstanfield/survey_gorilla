@@ -54,7 +54,7 @@ end
 get '/users/:user_id/surveys/new' do
 	@user = User.find(session[:user_id])
 
-	erb :survey_create
+	erb :"surveys/new"
 end
 
 ##### Edit User #####
