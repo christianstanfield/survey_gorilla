@@ -1,18 +1,19 @@
+<div class="container">
+  <h1>
+  Create Your Survey
+  </h1>
+  <form id="form" action="/" method="POST">
+    <div class="survey_container">
+      <input type="text" name="title" placeholder="Your title">
+      <div class="question_container">
+    	  <textarea name="question" class="question" placeholder="Type your question here"></textarea>
+    	    <input type="text" name="choice" class="option_field" placeholder="Option">
+    	    <input type="text" name="choice" class="option_field" placeholder="Option">
+    	    <input type="button" class="option_button" value="Add option">
+      </div>
+      <input type="button" class="question_button" value="Add question">
 
-
-<form id="form" action="/" method="POST">
-  <input type="text" name="title" placeholder="Your title">
-  <br>
-
-  <div class="question">
-	  <textarea name="question" class="question" placeholder="Type your question here"></textarea>
-	    <input type="text" name="choice" class="option_field" placeholder="Option">
-	    <input type="text" name="choice" class="option_field" placeholder="Option">
-	    <input type="button" class="option_button" value="Add option">
-	    <input type="button" class="question_button" value="Add question">
-
-  </div>
-
-  <input id="save" type="submit" name="save_button" value="Save">
-</form>
-
+      <input id="save" type="submit" name="save_button" value="Publish">
+    </div>
+  </form>
+</div>
