@@ -3,13 +3,13 @@
 	<a href='/surveys'>Take a Survey</a>
 	
 	<ul>
-		<% @users.created_surveys.each do |survey| %>
+		<% @user.created_surveys.each do |survey| %>
 		<li><a href="#"><%= survey.title %></a></li>
 		<% end %>
 	</ul>
 	
 	<ul>
-		<% @users.taken_surveys.each do |survey| %>
+		<% @user.taken_surveys.each do |survey| %>
 		<li><a href="#"><%= survey.created_survey.title %></a></li>
 		<% end %>
 	</ul>
