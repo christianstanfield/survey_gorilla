@@ -1,0 +1,58 @@
+html, body{
+/*  height:100%;*/
+}
+body{
+  margin-top: -22px;
+  margin-bottom: -40px;
+}
+.container {
+  margin: 0 auto;
+  width: 70%;
+  background-color: rgba(119, 119, 119, 0.44);
+  height: 100%;
+}
+
+h1{
+  text-align: center;
+  padding: 20px;
+  border: 2px solid gray;
+}
+
+form input {
+  display:block;
+  margin: 20px;
+}
+
+form input:first-child{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+form textarea{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+form .option_field{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*.question_container{
+  padding: 20px;
+  border: 2px dashed gray;
+}
+*/
+form .option_button, .question_button, #save{
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+form #save{
+  background: linear-gradient(gray, black);
+  color: white;
+}
