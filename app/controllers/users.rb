@@ -23,8 +23,12 @@ end
 ##### Specific User #####
 
 get '/users/:user_id' do
-
-  erb :'users/show'
+	if session[:user_id] != nil
+		@user = User.find(session[:user_id])
+	  erb :'users/show'
+	else
+		redirect '/users/login'
+	end
 end
 
 ##### Edit User #####
@@ -53,14 +57,15 @@ get '/login' do
 	erb :"/users/login"
 end
 
-post '/login' do 
+post '/users/login' do 
 	# @user = User.find_by(email: params[:user][:email])
 	@user = User.authenticate(params[:user][:email], params[:user][:password])
 	if @user != nil
-		session[:user_id] = @user.id 
+		session[:user_id] = @user.id
+		redirect "/users/#{@user.id}"
+	else
+		redirect '/users/login'
 	end
-	
-	redirect '/users'
 end
 
 ##### Logout #####

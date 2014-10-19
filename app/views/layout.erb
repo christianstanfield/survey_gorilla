@@ -19,7 +19,7 @@
 </head>
 <body>
   <nav>
-    <% if session[:user_id] %>
+    <% if session[:user_id] != nil %>
       <a href="/logout">Logout</a>
     <% else %>
       <a href="/login">Login</a>
