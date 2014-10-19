@@ -9,3 +9,9 @@ post '/surveys' do
 	
 	redirect "/users/#{@user.id}"
 end
+
+get '/surveys/:survey_id' do 
+	@survey = params[:survey_id]
+
+	erb :"surveys/show"
+end
