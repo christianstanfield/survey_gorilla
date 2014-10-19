@@ -18,7 +18,7 @@ post '/users' do
 	session[:user_id] = @user.id
 	@user.save
 
-  redirect '/users'
+  redirect "/users/#{@user.id}"
 end
 
 ##### Login #####
