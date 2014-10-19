@@ -1,5 +1,6 @@
 class SurveyParser
-	def initialize
+	def initialize(user)
+		@user = user
 	end
 	def parse(form_text)
 		input_array = form_text.split("&")
@@ -9,7 +10,7 @@ class SurveyParser
 			case key
 			when 'title'
 
-				@current_survey = CreatedSurvey.create!(title: value, user_id: session[:user_id])
+				@current_survey = CreatedSurvey.create!(title: value, user_id: @user.id)
 			when 'question'
 				@current_question = Question.create!(content: value, created_survey_id: @current_survey.id)
 			when 'choice'
