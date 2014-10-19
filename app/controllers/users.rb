@@ -17,7 +17,7 @@ post '/users' do
 	@user.password=(params[:password])
 	session[:user_id] = @user.id
 	@user.save
-	
+
   redirect '/users'
 end
 
@@ -29,9 +29,8 @@ get '/users/login' do
 end
 
 post '/users/login' do 
-	# @user = User.find_by(email: params[:user][:email])
-	@user = User.authenticate(params[:user][:email], params[:user][:password])
-	if @user != nil
+	if User.authenticate(params[:user][:password])
+		@user = User.find_by(email: params[:user][:email])
 		session[:user_id] = @user.id
 		redirect "/users/#{@user.id}"
 	else
@@ -74,5 +73,5 @@ end
 get '/logout' do
 
 	session.clear
-	erb :index
+	redirect '/'
 end
