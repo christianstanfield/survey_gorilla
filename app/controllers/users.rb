@@ -46,6 +46,13 @@ delete '/users/:user_id' do
 	redirect '/users' 
 end
 
+##### Login #####
+
+get '/login' do 
+
+	erb :"/users/login"
+end
+
 ##### Logout #####
 
 get '/logout' do
