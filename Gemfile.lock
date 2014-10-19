@@ -112,6 +112,7 @@ DEPENDENCIES
   did_you_mean
   factory_girl
   faker
+  json
   nyan-cat-formatter
   oauth
   pg
