@@ -1,5 +1,6 @@
 class SurveyParser
-	def initialize
+	def initialize(user)
+		@user = user
 	end
 	def parse(form_text)
 		p form_text
@@ -9,7 +10,8 @@ class SurveyParser
 			value = pair.split("=")[1].gsub(/\+/, " ")
 			case key
 			when 'title'
-				@current_survey = CreatedSurvey.create!(title: value)
+
+				@current_survey = CreatedSurvey.create!(title: value, user_id: @user.id)
 			when 'question'
 				@current_question = Question.create!(content: value, created_survey_id: @current_survey.id)
 			when 'choice'

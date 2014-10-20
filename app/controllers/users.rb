@@ -18,7 +18,7 @@ post '/users' do
 	session[:user_id] = @user.id
 	@user.save
 
-  redirect '/users'
+  redirect "/users/#{@user.id}"
 end
 
 ##### Login #####
@@ -30,7 +30,7 @@ end
 
 post '/users/login' do 
 	@user = User.find_by(email: params[:user][:email])
-	if @user.authenticate(params[:user][:password])
+	if @user && @user.authenticate(params[:user][:password])
 		session[:user_id] = @user.id
 		redirect "/users/#{@user.id}"
 	else
@@ -47,6 +47,14 @@ get '/users/:user_id' do
 	else
 		redirect '/users/login'
 	end
+end
+
+##### User Survey #####
+
+get '/users/:user_id/surveys/new' do
+	@user = User.find(session[:user_id])
+
+	erb :"surveys/new"
 end
 
 ##### Edit User #####
