@@ -28,13 +28,14 @@ post '/surveys/:survey_id/take' do
 end
 
 get '/surveys/:survey_id/stats' do
+  @user = User.find(session[:user_id])
   @survey = CreatedSurvey.find(params[:survey_id])
+  @answers = @survey.answers
   if session[:user_id] == @survey.user.id
     @nsize = @survey.taken_surveys.size
     @nsize = 0 if @nsize.nil?
     erb :"surveys/show"
   else
-
     @message = "Get that shit outta here"
     erb :"surveys/show"
   end

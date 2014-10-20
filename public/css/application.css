@@ -8,7 +8,7 @@ body{
 .container {
   margin: 0 auto;
   width: 70%;
-  background-color: rgba(119, 119, 119, 0.44);
+  background-color: rgb(192, 200, 218);
   height: 100%;
 }
 
@@ -28,6 +28,16 @@ li span{
   margin-left: 10px;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+  padding: 2px;
+}
+a:hover{
+  background-color: rgba(62, 147, 184, 1);
+  font-weight:bold;
+  color: white;
+}
 /*form input {
   display:block;
   margin: 20px;
@@ -72,4 +82,52 @@ form .option_button, .question_button, #save, .survey_title{
 form #save{
   background: linear-gradient(gray, black);
   color: white;
+}
+
+.section h3{
+  background-color: rgba(59, 146, 218, 0.57);;
+  padding: 3px;
+  border-radius: 3px;
+  font-style: italic;
+}
+
+.center_link {
+  text-align: center;
+}
+
+.section{
+  margin: 0px 20%;
+}
+
+.section input{
+  display:block;
+  margin: 20px;
+}
+
+table{
+  width:100%;
+}
+td:first-child{
+  width:40%;
+  text-align: right;
+  padding-right: 5%;
+}
+td:nth-child(2){
+  width:50%;
+  padding-right: 15%;
+}
+td:last-child{
+  width:10%;
+}
+td{
+  padding: 5px 0px;
+}
+.choice_bar{
+  background-color: white;
+  height: 10px;
+  border: 1px solid navy;
+}
+.question_text{
+  padding: 20px 10%;
+  border-top: 1px dotted gray;
 }
