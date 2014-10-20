@@ -44,13 +44,11 @@ $(document).ready(function(){
 	  event.preventDefault();
 	  var survey_data = $(this).serializeArray();
 	  $.ajax({
-	  	url: '/',
+	  	url: '/surveys/new',
 	  	type: "POST",
 	  	data: survey_data,
-	  	dataType: "JSON",
-	  	success: function(){
-	  		console.log("in success");
-	  		console.log(survey_data);
+	  	success: function(response){
+	  		window.location.href = '/users';
 	  	}
 
 	  });

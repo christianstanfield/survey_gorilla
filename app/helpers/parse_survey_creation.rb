@@ -3,10 +3,11 @@ class SurveyParser
 		@user = user
 	end
 	def parse(form_text)
+		p form_text
 		input_array = form_text.split("&")
 		input_array.each do |pair|
 			key = pair.split("=")[0]
-			value = pair.split("=")[1]
+			value = pair.split("=")[1].gsub(/\+/, " ")
 			case key
 			when 'title'
 

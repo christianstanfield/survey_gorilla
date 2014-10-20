@@ -2,9 +2,9 @@
   <h1>
   Create Your Survey
   </h1>
-  <form id="form" action="/surveys" method="POST">
+  <form id="form" action="/surveys/new" method="POST">
     <div class="survey_container">
-      <input type="text" name="title" placeholder="Your title">
+      <input type="text" name="title" class="survey_title" placeholder="Your title">
       <div class="question_container">
     	  <textarea name="question" class="question" placeholder="Type your question here"></textarea>
     	    <input type="text" name="choice" class="option_field" placeholder="Option">
@@ -17,3 +17,4 @@
     </div>
   </form>
 </div>
+<script src="/js/survey.js"></script>

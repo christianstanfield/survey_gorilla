@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>
+  <%= @survey.title %>
+  </h1>
+  <form id="form" action="/surveys/<%= @survey.id %>/take" method="POST">
+    <div class="survey_container">
+
+      <% @survey.questions.each.with_index(1) do |question, index| %>
+        <div class="question_container">
+        <ul><p><%= index.to_s + ". " + question.content %></p>
+          <% question.choices.each do |choice| %>
+            <li><input type="radio" name="<%= question.id %>" value="<%= choice.id %>"><span><%= choice.option %></span></li>
+          <% end %>
+        </ul>
+        </div>
+      <% end %>
+      <input id="save" type="submit" name="save_button" value="Submit">
+    </div>
+  </form>
+</div>
