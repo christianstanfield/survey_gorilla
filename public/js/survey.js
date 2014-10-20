@@ -48,7 +48,7 @@ $(document).ready(function(){
 	  	type: "POST",
 	  	data: survey_data,
 	  	success: function(response){
-	  		window.location.href = '/users';
+	  		window.location.href = '/';
 	  	}
 
 	  });

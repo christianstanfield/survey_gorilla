@@ -23,12 +23,12 @@ end
 
 ##### Login #####
 
-get '/users/login' do 
+get '/users/login' do
 
 	erb :"/users/login"
 end
 
-post '/users/login' do 
+post '/users/login' do
 	@user = User.find_by(email: params[:user][:email])
 	if @user && @user.authenticate(params[:user][:password])
 		session[:user_id] = @user.id
@@ -43,6 +43,7 @@ end
 get '/users/:user_id' do
 	if session[:user_id] != nil
 		@user = User.find(session[:user_id])
+		@all_surveys = CreatedSurvey.all
 	  erb :'users/show'
 	else
 		redirect '/users/login'
@@ -73,7 +74,7 @@ end
 
 delete '/users/:user_id' do
 
-	redirect '/users' 
+	redirect '/users'
 end
 
 ##### Logout #####
