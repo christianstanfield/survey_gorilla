@@ -3,4 +3,5 @@ class CreatedSurvey < ActiveRecord::Base
 	belongs_to :user
 	has_many :questions
   has_many :taken_surveys
+  has_many :answers, through: :taken_surveys
 end

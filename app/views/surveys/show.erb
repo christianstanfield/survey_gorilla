@@ -1,2 +1,29 @@
-<p><%= @nsize %> people took your survey.</p>
-<p><%= @message unless @message.nil? %></p>
+<div class="container">
+  <h1>Welcome <%= @user.name %></h1>
+  <div class='center_link'>
+    <p>
+      <%= @nsize %> people took your survey.
+    </p>
+    <p>
+      <%= @message unless @message.nil? %>
+    </p>
+  </div>
+
+  <% @survey.questions.each do |question| %>
+    <% @question_n_size = question.answers.size.to_f %>
+    <p class='question_text'><%= question.content %></p>
+    <% p @question_n_size %>
+    <table class='question_display'>
+    <% question.choices.each do |choice| %>
+      <% @length = choice.answers.size %>
+        <tr>
+          <td><%= choice.option %></td>
+          <td>
+            <div class='choice_bar' style='width: <%= 100 * @length/@question_n_size %>%;'></div>
+          </td>
+          <td><%= (100 * @length/@question_n_size).round %>%</td>
+        </tr>
+    <% end %>
+    </table>
+  <% end %>
+</div>
